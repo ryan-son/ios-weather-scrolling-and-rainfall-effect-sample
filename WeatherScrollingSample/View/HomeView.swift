@@ -5,22 +5,30 @@
 //  Created by Geonhee on 2022/06/20.
 //
 
+import SpriteKit
 import SwiftUI
 
 struct HomeView: View {
   @State var offset: CGFloat = 0
   var topEdge: CGFloat
   
+  @State var showRain = false
+  
   var body: some View {
     ZStack {
       GeometryReader { proxy in
-        Image("night_sky")
+        Image("cloud_sky")
           .resizable()
           .aspectRatio(contentMode: .fill)
           .frame(width: proxy.size.width, height: proxy.size.height)
       }
       .ignoresSafeArea()
       
+      // Rain Fall View
+      SpriteView(scene: RainFall(), options: [.allowsTransparency])
+        .opacity(showRain ? 1 : 0)
+      
+      // Main View
       ScrollView(.vertical, showsIndicators: false) {
         VStack {
           // Weather Data
@@ -61,16 +69,16 @@ struct HomeView: View {
                 VStack {
                   ScrollView(.horizontal, showsIndicators: false) {
                     HStack(spacing: 15) {
-                      ForecastView(time: "Now", celcius: 22, image: "moon.stars")
-                      ForecastView(time: "0 AM", celcius: 22, image: "moon.stars")
-                      ForecastView(time: "1 AM", celcius: 21, image: "moon.stars")
-                      ForecastView(time: "2 AM", celcius: 21, image: "cloud.moon")
-                      ForecastView(time: "3 AM", celcius: 21, image: "cloud.moon")
-                      ForecastView(time: "4 AM", celcius: 21, image: "cloud.moon")
-                      ForecastView(time: "5 AM", celcius: 21, image: "cloud.moon")
+                      ForecastView(time: "Now", celcius: 22, image: "cloud.moon.rain")
+                      ForecastView(time: "0 AM", celcius: 22, image: "cloud.moon.rain")
+                      ForecastView(time: "1 AM", celcius: 21, image: "cloud.moon.rain")
+                      ForecastView(time: "2 AM", celcius: 21, image: "cloud.moon.rain")
+                      ForecastView(time: "3 AM", celcius: 21, image: "cloud.moon.rain")
+                      ForecastView(time: "4 AM", celcius: 21, image: "cloud.sun.rain")
+                      ForecastView(time: "5 AM", celcius: 21, image: "cloud.sun.rain")
                       ForecastView(time: "6 AM", celcius: 21, image: "cloud.sun")
                       ForecastView(time: "7 AM", celcius: 22, image: "cloud.sun")
-                      ForecastView(time: "8 AM", celcius: 24, image: "sun.min")
+                      ForecastView(time: "8 AM", celcius: 24, image: "cloud.sun")
                     }
                   }
                 }
@@ -79,11 +87,17 @@ struct HomeView: View {
             
             WeatherDataView()
           }
+          .overlay(
+            SpriteView(scene: RainFallLanding(), options: [.allowsTransparency])
+              .offset(y: -10)
+              .offset(y: -(offset + topEdge) > 105 ? -(offset + (105 + topEdge)) : 0)
+              .opacity(showRain ? 1 : 0)
+          )
         }
         .padding(.top, 25)
         .padding(.top, topEdge)
         .padding(.horizontal)
-        .overlay(
+        .background(
           GeometryReader { proxy -> Color in
             let minY = proxy.frame(in: .global).minY
             
@@ -94,6 +108,13 @@ struct HomeView: View {
             return .clear
           }
         )
+      }
+    }
+    .onAppear {
+      DispatchQueue.main.asyncAfter(deadline: .now() + 0.8) {
+        withAnimation {
+          showRain = true
+        }
       }
     }
   }
@@ -144,4 +165,3 @@ struct HomeView_Previews: PreviewProvider {
     ContentView()
   }
 }
-

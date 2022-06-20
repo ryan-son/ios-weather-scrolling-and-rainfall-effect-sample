@@ -34,11 +34,11 @@ struct WeatherDataView: View {
           },
           contentView: {
             VStack(alignment: .leading, spacing: 10) {
-              Text("8")
+              Text("0")
                 .font(.title)
                 .fontWeight(.semibold)
               
-              Text("Very High")
+              Text("Low")
                 .font(.title)
                 .fontWeight(.semibold)
             }
@@ -53,7 +53,7 @@ struct WeatherDataView: View {
           },
           contentView: {
             VStack(alignment: .leading, spacing: 10) {
-              Text("0 mm")
+              Text("68 mm")
                 .font(.title)
                 .fontWeight(.semibold)
               

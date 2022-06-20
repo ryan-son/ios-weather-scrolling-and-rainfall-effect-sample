@@ -16,6 +16,9 @@
 		AA40ED812860B40C00ADEC3F /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA40ED802860B40C00ADEC3F /* HomeView.swift */; };
 		AA40ED832860B81100ADEC3F /* CustomStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA40ED822860B81100ADEC3F /* CustomStackView.swift */; };
 		AA40ED852860B90B00ADEC3F /* CustomCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA40ED842860B90B00ADEC3F /* CustomCorner.swift */; };
+		AA6C7DCB2860D74B00127D1C /* RainFall.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6C7DCA2860D74B00127D1C /* RainFall.swift */; };
+		AA6C7DD32860DA3800127D1C /* RainFall.sks in Resources */ = {isa = PBXBuildFile; fileRef = AA6C7DD12860DA3800127D1C /* RainFall.sks */; };
+		AA6C7DD72860E1AB00127D1C /* RainFallLanding.sks in Resources */ = {isa = PBXBuildFile; fileRef = AA6C7DD52860E1AB00127D1C /* RainFallLanding.sks */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +32,9 @@
 		AA40ED802860B40C00ADEC3F /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		AA40ED822860B81100ADEC3F /* CustomStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomStackView.swift; sourceTree = "<group>"; };
 		AA40ED842860B90B00ADEC3F /* CustomCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCorner.swift; sourceTree = "<group>"; };
+		AA6C7DCA2860D74B00127D1C /* RainFall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RainFall.swift; sourceTree = "<group>"; };
+		AA6C7DD12860DA3800127D1C /* RainFall.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = RainFall.sks; sourceTree = "<group>"; };
+		AA6C7DD52860E1AB00127D1C /* RainFallLanding.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = RainFallLanding.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +67,7 @@
 		AA40ED6F2860B38A00ADEC3F /* WeatherScrollingSample */ = {
 			isa = PBXGroup;
 			children = (
+				AA6C7DCC2860D79D00127D1C /* SpriteEffect */,
 				AA40ED7F2860B40100ADEC3F /* Model */,
 				AA40ED7E2860B3B900ADEC3F /* View */,
 				AA40ED702860B38A00ADEC3F /* WeatherScrollingSampleApp.swift */,
@@ -96,6 +103,16 @@
 				AA02A79D2860CEFB00CFD1E6 /* Forecast.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		AA6C7DCC2860D79D00127D1C /* SpriteEffect */ = {
+			isa = PBXGroup;
+			children = (
+				AA6C7DCA2860D74B00127D1C /* RainFall.swift */,
+				AA6C7DD12860DA3800127D1C /* RainFall.sks */,
+				AA6C7DD52860E1AB00127D1C /* RainFallLanding.sks */,
+			);
+			path = SpriteEffect;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -156,8 +173,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA6C7DD72860E1AB00127D1C /* RainFallLanding.sks in Resources */,
 				AA40ED782860B38A00ADEC3F /* Preview Assets.xcassets in Resources */,
 				AA40ED752860B38A00ADEC3F /* Assets.xcassets in Resources */,
+				AA6C7DD32860DA3800127D1C /* RainFall.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -170,6 +189,7 @@
 			files = (
 				AA40ED832860B81100ADEC3F /* CustomStackView.swift in Sources */,
 				AA02A79C2860CCA100CFD1E6 /* WeatherDataView.swift in Sources */,
+				AA6C7DCB2860D74B00127D1C /* RainFall.swift in Sources */,
 				AA02A79E2860CEFB00CFD1E6 /* Forecast.swift in Sources */,
 				AA40ED852860B90B00ADEC3F /* CustomCorner.swift in Sources */,
 				AA40ED812860B40C00ADEC3F /* HomeView.swift in Sources */,
